@@ -1,4 +1,4 @@
-# Play a melody on the Arduino and blink the LED to the beat.
+# Play a melody on the Arduino and blink the LED to the beat
 
 Simple Arduino project to play a melody using notes and blink an LED to the tune of the melody.
 
