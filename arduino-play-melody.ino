@@ -24,11 +24,10 @@ SOFTWARE.
 
 #include "note_scale.h"
 #include "jingle_bells.h"
+//#include "merry_christmas.h"
 
 int speaker_pin = 8;
-
-int tempo = 300; // 1 beat buration in ms
-int blink_duration = 50; // LED off state duration in ms
+int blink_duration = 100; // LED off state duration in ms, 80-120
 
 /**
  * Play the tone that corresponds to the note name.

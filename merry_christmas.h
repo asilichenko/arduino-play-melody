@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
+int tempo = 400; // 1 beat buration in ms
 int melody_len = 54;
 
 String melody_notes[] = {
