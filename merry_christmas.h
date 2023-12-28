@@ -22,20 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-int note_scale_len = 17;
+int melody_len = 54;
 
-String note_names[] = {
-  "E5", "F#5", "G#5", "A5", "B5", "C#6", "D6", "E6", "F#6", // jingle bells
-  "C5", "D5", "E5", "F5", "G5", "A5", "B5", "C6" // merry christmas
+String melody_notes[] = {
+  "C5", "F5", "F5", "G5", "F5", "E5", "D5", "D5", "D5",
+  "G5", "G5", "A5", "G5", "F5", "E5", "E5", "E5",
+  "A5", "A5", "B5", "A5", "G5", "F5", "D5", "C5", "C5", "D5", "G5", "E5", "F5",
+  "C5", "F5", "F5", "F5", "E5",
+  "E5", "F5", "E5", "D5", "C5",
+  "G5", "A5", "G5", "G5", "F5", "F5", "C6", "C5",
+  "C5", "C5", "D5", "G5", "E5", "F5"
 };
 
-/*
- * Tone frequencies based on A440 standard pitch.
- * 
- * @see https://en.wikipedia.org/wiki/A440_(pitch_standard)
- * @see https://pages.mtu.edu/~suits/notefreqs.html
- */
-float note_tones[] = {
-  659.25, 739.99, 830.61, 880.00, 987.77, 1108.73, 1174.66, 1318.51, 1479.98, // jingle bells
-  523.25, 587.33, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50 // merry christmas
+float melody_beats[] = {
+  1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1,
+  1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1,
+  1, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 1, 1, 1, 2,
+  1, 1, 1, 1, 1,
+  1, 1, 1, 1, 1,
+  1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1,
+  0.5, 0.5, 1, 1, 1, 1
 };
