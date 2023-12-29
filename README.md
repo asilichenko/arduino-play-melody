@@ -70,6 +70,22 @@ D6 C#6 C#6 C#6
 E6 E6 D6 B5 A5
 ```
 
+## We wish you a Merry Christmas
+
+Melody is defined in the [merry_christmas.h](merry_christmas.h).
+
+### Notes:
+
+```
+C5 F5 F5 G5 F5 E5 D5 D5 D5
+G5 G5 A5 G5 F5 E5 E5 E5
+A5 A5 B5 A5 G5 F5 D5 C5 C5 D5 G5 E5 F5
+C5 F5 F5 F5 E5
+E5 F5 E5 D5 C5
+G5 A5 G5 G5 F5 F5 C6 C5
+C5 C5 D5 G5 E5 F5
+```
+
 ## Author
 - [@asilichenko](https://github.com/asilichenko)
 
