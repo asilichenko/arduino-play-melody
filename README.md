@@ -51,7 +51,7 @@ Melody is defined in the [jingle_bells.h](jingle_bells.h).
 
 ### How does this melody looks on the Christmas Lights:
 
-[<img src="https://i.ytimg.com/vi/f72fopvXng0/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/f72fopvXng0 "Jingle Bells Christmas Lights")
+[<img src="https://i.ytimg.com/vi/HinN0ipXKjY/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/HinN0ipXKjY "Jingle Bells Christmas Lights")
 
 ### Notes:
 ```
