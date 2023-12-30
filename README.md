@@ -45,9 +45,13 @@ Frequencies for equal-tempered scale, A4 = 440 Hz:
 
 Melody is defined in the [jingle_bells.h](jingle_bells.h).
 
-How does this melody sound on the piano:
+### How does this melody sound on the piano:
 
 [<img src="https://i.ytimg.com/vi/i0uPkqiJtPo/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/watch?v=i0uPkqiJtPo "Jingle Bells Melody Piano")
+
+### How does this melody looks on the Christmas Lights:
+
+[<img src="https://i.ytimg.com/vi/f72fopvXng0/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/f72fopvXng0 "Jingle Bells Christmas Lights")
 
 ### Notes:
 ```
@@ -76,6 +80,10 @@ E6 E6 D6 B5 A5
 ## We wish you a Merry Christmas
 
 Melody is defined in the [merry_christmas.h](merry_christmas.h).
+
+### How does this melody looks on the Christmas Lights:
+
+[<img src="https://i.ytimg.com/vi/zpfFC2_fZ3E/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/zpfFC2_fZ3E "We Wish You a Merry Christmas on Christmas Lights")
 
 ### Notes:
 
