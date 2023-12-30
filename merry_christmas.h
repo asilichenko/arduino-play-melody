@@ -22,10 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-int tempo = 400; // 1 beat buration in ms
-int melody_len = 54;
+const int TEMPO = 400; // 1 beat buration in ms
+const int MELODY_LEN = 54;
 
-String melody_notes[] = {
+const String MELODY_NOTES[MELODY_LEN] = {
   "C5", "F5", "F5", "G5", "F5", "E5", "D5", "D5", "D5",
   "G5", "G5", "A5", "G5", "F5", "E5", "E5", "E5",
   "A5", "A5", "B5", "A5", "G5", "F5", "D5", "C5", "C5", "D5", "G5", "E5", "F5",
@@ -35,7 +35,7 @@ String melody_notes[] = {
   "C5", "C5", "D5", "G5", "E5", "F5"
 };
 
-float melody_beats[] = {
+const float MELODY_BEATS[MELODY_LEN] = {
   1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1,
   1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1,
   1, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 1, 1, 1, 2,
