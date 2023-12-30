@@ -29,8 +29,19 @@ SOFTWARE.
 #include "jingle_bells.h"
 //#include "merry_christmas.h"
 
-int speaker_pin = 8;
-int blink_duration = 100; // LED off state duration in ms, 80-120
+const int SPEAKER_PIN = 8;
+const int LED_PIN = 9; // 13 is digital only
+
+const int PAUSE_BETWEEN_NOTES = 10; // in ms
+
+/**
+ * LED blink state duration in ms, 80-120
+ */
+const int BLINK_DURATION = 100;
+/**
+ * LED brightness in blink state: [0-255]
+ */
+const float LED_LOW_BRIGHTNESS = HIGH * 0;
 
 /**
  * Play the tone that corresponds to the note name.
@@ -38,37 +49,39 @@ int blink_duration = 100; // LED off state duration in ms, 80-120
  * @param note - note in letters notation
  * @param duration - play duration in ms
  */
-void playNote(String note, int duration) {  
-  for (int i = 0; i < note_scale_len; i++) {
-    if (note_names[i] == note) {
-      tone(speaker_pin, note_tones[i], duration);
+void playNote(String note, int duration) {
+  for (int i = 0; i < NOTE_SCALE_LEN; i++) {
+    if (NOTE_NAMES[i] == note) {
+      tone(SPEAKER_PIN, NOTE_TONES[i], duration);
       break;
     }
   }
 }
 
 void blink() {
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(blink_duration);
-  digitalWrite(LED_BUILTIN, HIGH);
+  analogWrite(LED_PIN, LED_LOW_BRIGHTNESS);
+  delay(BLINK_DURATION);
+  digitalWrite(LED_PIN, HIGH);
 }
 
 void setup() {
-  pinMode(speaker_pin, OUTPUT);
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(SPEAKER_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
 }
 
-void loop() {  
-  digitalWrite(LED_BUILTIN, HIGH);
-  for (int i = 0; i < melody_len; i++) {
-    String note = melody_notes[i];
-    int note_duration = melody_beats[i] * tempo;
+void loop() {
+  digitalWrite(LED_PIN, HIGH);
+  
+  for (int i = 0; i < MELODY_LEN; i++) {
+    const String note = MELODY_NOTES[i];
+    const int note_duration = MELODY_BEATS[i] * TEMPO;
     if (note == " ") { // rest
       delay(note_duration);
     } else {     
       playNote(note, note_duration);
       blink();
     }
-    delay(note_duration - blink_duration); // wait for the note to finish playing
+    delay(note_duration - BLINK_DURATION); // wait for the note to finish playing
+    delay(PAUSE_BETWEEN_NOTES);
   }
 }
