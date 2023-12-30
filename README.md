@@ -18,6 +18,9 @@ Could be used to play melody and blink the Christmas lights.
       - Delay milis of blink_duration
       - Turn on
    7. Delay until playing note is finished
+  
+> [!NOTE]
+> If you want to fade out and fade in the light using the `analogWrite` function, do not use pin 13 (`LED_BUILTIN`) because it is digital-only.
 
 ### To change the melody:
 1. create h-file for the melody
