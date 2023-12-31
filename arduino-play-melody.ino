@@ -75,8 +75,8 @@ void loop() {
   for (int i = 0; i < MELODY_LEN; i++) {
     const String note = MELODY_NOTES[i];
     const int note_duration = MELODY_BEATS[i] * TEMPO;
-    if (note == " ") { // rest
-      delay(note_duration);
+    if (note == " ") {
+      // rest
     } else {     
       playNote(note, note_duration);
       blink();
