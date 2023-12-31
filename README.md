@@ -22,6 +22,10 @@ Could be used to play melody and blink the Christmas lights.
 > [!NOTE]
 > If you want to fade out and fade in the light using the `analogWrite` function, do not use pin 13 (`LED_BUILTIN`) because it is digital-only.
 
+### External load connection
+
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/284d2e7b-ebbc-4c12-b4ad-7fa12ce25c2d" width="300"/>
+
 ### To change the melody:
 1. create h-file for the melody
 2. include it instead of "jingle_bells.h"
@@ -96,6 +100,9 @@ E5 F5 E5 D5 C5
 G5 A5 G5 G5 F5 F5 C6 C5
 C5 C5 D5 G5 E5 F5
 ```
+
+## Links
+* My post about how used this sketch for my Christmas lights: [Restoring My Parents' Vintage Christmas Lights](https://www.linkedin.com/pulse/restoring-my-parents-vintage-christmas-lights-oleksii-sylichenko-cppif)
 
 ## Author
 - [@asilichenko](https://github.com/asilichenko)
