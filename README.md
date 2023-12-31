@@ -86,10 +86,6 @@ E6 E6 D6 B5 A5
 
 Melody is defined in the [merry_christmas.h](merry_christmas.h).
 
-### How does this melody looks on the Christmas Lights:
-
-[<img src="https://i.ytimg.com/vi/zpfFC2_fZ3E/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/zpfFC2_fZ3E "We Wish You a Merry Christmas on Christmas Lights")
-
 ### Notes:
 
 ```
@@ -101,6 +97,10 @@ E5 F5 E5 D5 C5
 G5 A5 G5 G5 F5 F5 C6 C5
 C5 C5 D5 G5 E5 F5
 ```
+
+### How does this melody looks on the Christmas Lights:
+
+[<img src="https://i.ytimg.com/vi/zpfFC2_fZ3E/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/zpfFC2_fZ3E "We Wish You a Merry Christmas on Christmas Lights")
 
 ## Links
 * My post about how used this sketch for my Christmas lights: [Restoring Vintage Christmas Lights](https://www.linkedin.com/pulse/restoring-my-parents-vintage-christmas-lights-oleksii-sylichenko-cppif)
