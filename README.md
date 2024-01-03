@@ -46,6 +46,46 @@ Tones of the notes are defined by the [A440 standard](https://en.wikipedia.org/w
 Frequencies for equal-tempered scale, A4 = 440 Hz: 
 - [https://pages.mtu.edu/~suits/notefreqs.html](https://pages.mtu.edu/~suits/notefreqs.html)
 
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/4437a882-584d-45e9-9a2a-d0e0ab6a7987" width="450"/>
+
+### Notes calculation
+
+The frequency of any note can be calculated based on the reference note.
+
+For example, according to standard A4 = 440:
+
+* base note, `base` = A4
+* base note frequency, `f(base)` = 440
+
+```
+f(n) = f(base) * 2 ^ (delta / 12);
+
+C  C# D  D# E  F  F# G  G#  A  A#  B
+1  2  3  4  5  6  7  8  9  10  11  12
+
+delta = n - base = (O * 12 + n) - (4 * 12 + 10);
+```
+
+* `O` - octave number;
+* `n` - tone number in the octave;
+* `4` - base octave number;
+* `12` - number of tones in the octave;
+* `10` - base tone number in its octave;
+
+```
+C4 - A4 = (4 * 12 + 1) - (4 * 12 + 10) = -9;
+f(C4) = 440 * 2 ^ (-9 / 12) = 439.41;
+
+B4 - A4 = (4 * 12 + 12) - (4 * 12 + 10) = 2;
+f(B4) = 440 * 2 ^ (2 / 12) = 493.88;
+
+A3 - A4 = (3 * 12 + 10) - (3 * 12 + 10) = -12;
+f(A3) = 440 * 2 ^ (-12 / 12) = 220;
+
+A5 - A4 = (5 * 12 + 10) - (3 * 12 + 10) = 12;
+f(A3) = 440 * 2 ^ (12 / 12) = 880;
+```
+
 ## Jingle Bells
 
 Melody is defined in the [jingle_bells.h](jingle_bells.h).
@@ -101,6 +141,52 @@ C5 C5 D5 G5 E5 F5
 ### How does this melody looks on the Christmas Lights:
 
 [<img src="https://i.ytimg.com/vi/zpfFC2_fZ3E/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/zpfFC2_fZ3E "We Wish You a Merry Christmas on Christmas Lights")
+
+# Für Elise
+
+Melody is defined in the [elise.h](elise.h).
+
+### Notes:
+
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/ba4da535-b861-470f-a97d-93f8d3645a4a" width="300"/>
+
+| E5 | D#5 | E5 | D#5 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 |
+
+| E5 | B4 | D5 | C5 | A4 |
+| - | - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 | 1.5 |
+
+| C4 | E4 | A4 | B4 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 1.5 |
+
+| E4 | G#4 | B4 | C5 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 1.5 |
+
+| E4 |
+| - |
+| 0.5 |
+
+| E5 | D#5 | E5 | D#5 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 |
+
+| E5 | B4 | D5 | C5 | A4 |
+| - | - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 | 1.5 |
+
+| C4 | E4 | A4 | B4 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 1.5 |
+
+| E4 | C5 | B4 | A4 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 2 |
+
+###
 
 ## Links
 * My post about how I used this sketch for my Christmas lights: [Restoring Vintage Christmas Lights](https://www.linkedin.com/pulse/restoring-my-parents-vintage-christmas-lights-oleksii-sylichenko-cppif)
