@@ -188,6 +188,76 @@ Melody is defined in the [elise.h](elise.h).
 
 ###
 
+## Silent Night
+
+Notes: [silent_night.h](silent_night.h)
+
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/a825e25b-3c16-405a-aeb2-dabb10dcf45a" width="300"/>
+
+| C4 | D4 | C4 | A3 |
+| - | - | - | - |
+| 1.5 | 0.5 | 1 | 3 |
+
+| C4 | D4 | C4 | A3 |
+| - | - | - | - |
+| 1.5 | 0.5 | 1 | 3 |
+
+| G4 | G4 | E4 |
+| - | - | - |
+| 2 | 1 | 3 |
+
+| F4 | F4 | C4 |
+| - | - | - |
+| 2 | 1 | 3 |
+
+| D4 | D4 | F4 |
+| - | - | - |
+| 2 | 1 | 1.5 |
+
+| E4 | D4 | C4 |
+| - | - | - |
+| 0.5 | 1 | 1.5 |
+
+| D4 | C4 | A3 |
+| - | - | - |
+| 0.5 | 1 | 3 |
+
+| D4 | D4 | F4 |
+| - | - | - |
+| 2 | 1 | 1.5 |
+
+| E4 | D4 | C4 |
+| - | - | - |
+| 0.5 | 1 | 1.5 |
+
+| D4 | C4 | A3 |
+| - | - | - |
+| 0.5 | 1 | 3 |
+
+| G4 | G4 | A#4 |
+| - | - | - |
+| 2 | 1 | 1.5 |
+
+| G4 | E4 | F4 |
+| - | - | - |
+| 0.5 | 1 | 3 |
+
+| A4 |
+| - |
+| 3 |
+
+| F4 | C4 | A3 | C4 |
+| - | - | - | - |
+| 1 | 1 | 1 | 1.5 |
+
+| A#3 | G3 | F3 |
+| - | - | - |
+| 0.5 | 1 | 3 |
+
+| A3 |
+| - |
+| 3 |
+
 ## Links
 * My post about how I used this sketch for my Christmas lights: [Restoring Vintage Christmas Lights](https://www.linkedin.com/pulse/restoring-my-parents-vintage-christmas-lights-oleksii-sylichenko-cppif)
 
