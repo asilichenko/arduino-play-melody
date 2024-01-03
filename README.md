@@ -102,6 +102,50 @@ C5 C5 D5 G5 E5 F5
 
 [<img src="https://i.ytimg.com/vi/zpfFC2_fZ3E/maxresdefault.jpg" style="width:300px;">](https://www.youtube.com/shorts/zpfFC2_fZ3E "We Wish You a Merry Christmas on Christmas Lights")
 
+# Für Elise
+
+Melody is defined in the [elise.h](elise.h).
+
+### Notes:
+
+| E5 | D#5 | E5 | D#5 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 |
+
+| E5 | B4 | D5 | C5 | A4 |
+| - | - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 | 1.5 |
+
+| C4 | E4 | A4 | B4 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 1.5 |
+
+| E4 | G#4 | B4 | C5 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 1.5 |
+
+| E4 |
+| - |
+| 0.5 |
+
+| E5 | D#5 | E5 | D#5 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 |
+
+| E5 | B4 | D5 | C5 | A4 |
+| - | - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 0.5 | 1.5 |
+
+| C4 | E4 | A4 | B4 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 1.5 |
+
+| E4 | C5 | B4 | A4 |
+| - | - | - | - |
+| 0.5 | 0.5 | 0.5 | 2 |
+
+###
+
 ## Links
 * My post about how I used this sketch for my Christmas lights: [Restoring Vintage Christmas Lights](https://www.linkedin.com/pulse/restoring-my-parents-vintage-christmas-lights-oleksii-sylichenko-cppif)
 
