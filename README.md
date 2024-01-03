@@ -108,6 +108,8 @@ Melody is defined in the [elise.h](elise.h).
 
 ### Notes:
 
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/ba4da535-b861-470f-a97d-93f8d3645a4a" width="300"/>
+
 | E5 | D#5 | E5 | D#5 |
 | - | - | - | - |
 | 0.5 | 0.5 | 0.5 | 0.5 |
