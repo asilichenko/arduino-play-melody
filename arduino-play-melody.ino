@@ -44,7 +44,7 @@ const int PAUSE_BETWEEN_NOTES = 10; // in ms
  * -2 - shift one octave down
  *  2 - shift one octave up
  */
-const int OCTAVE_SHIFT = 2;
+const int OCTAVE_SHIFT = 1;
 
 /**
  * LED blink state duration in ms, 80-120
