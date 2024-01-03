@@ -46,6 +46,8 @@ Tones of the notes are defined by the [A440 standard](https://en.wikipedia.org/w
 Frequencies for equal-tempered scale, A4 = 440 Hz: 
 - [https://pages.mtu.edu/~suits/notefreqs.html](https://pages.mtu.edu/~suits/notefreqs.html)
 
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/4437a882-584d-45e9-9a2a-d0e0ab6a7987" width="450"/>
+
 ## Jingle Bells
 
 Melody is defined in the [jingle_bells.h](jingle_bells.h).
