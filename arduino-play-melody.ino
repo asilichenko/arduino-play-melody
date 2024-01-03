@@ -36,6 +36,15 @@ const int LED_PIN = 9; // 13 is digital only
 
 const int PAUSE_BETWEEN_NOTES = 10; // in ms
 
+/*
+ * Shift the tone of the octave
+ * 
+ *  1 - no shift
+ * -2 - shift one octave down
+ *  2 - shift one octave up
+ */
+const int OCTAVE_SHIFT = 2;
+
 /**
  * LED blink state duration in ms, 80-120
  */
@@ -54,7 +63,13 @@ const float LED_LOW_BRIGHTNESS = HIGH * 0;
 void playNote(String note, int duration) {
   for (int i = 0; i < NOTE_SCALE_LEN; i++) {
     if (NOTE_NAMES[i] == note) {
-      tone(SPEAKER_PIN, NOTE_TONES[i], duration);
+      int note_tone = NOTE_TONES[i];
+      if (OCTAVE_SHIFT < -1) {
+        note_tone /= -OCTAVE_SHIFT;
+      } else if (OCTAVE_SHIFT > 1) {
+        note_tone *= OCTAVE_SHIFT;
+      }
+      tone(SPEAKER_PIN, note_tone, duration);
       break;
     }
   }
