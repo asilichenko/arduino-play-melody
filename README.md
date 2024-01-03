@@ -48,6 +48,44 @@ Frequencies for equal-tempered scale, A4 = 440 Hz:
 
 <img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/4437a882-584d-45e9-9a2a-d0e0ab6a7987" width="450"/>
 
+### Notes calculation
+
+The frequency of any note can be calculated based on the reference note.
+
+For example, according to standard A4 = 440:
+
+* base note, `base` = A4
+* base note frequency, `f(base)` = 440
+
+```
+f(n) = f(base) * 2 ^ (delta / 12);
+
+C  C# D  D# E  F  F# G  G#  A  A#  B
+1  2  3  4  5  6  7  8  9  10  11  12
+
+delta = n - base = (O * 12 + n) - (4 * 12 + 10);
+```
+
+* `O` - octave number;
+* `n` - tone number in the octave;
+* `4` - base octave number;
+* `12` - number of tones in the octave;
+* `10` - base tone number in its octave;
+
+```
+C4 - A4 = (4 * 12 + 1) - (4 * 12 + 10) = -9;
+f(C4) = 440 * 2 ^ (-9 / 12) = 439.41;
+
+B4 - A4 = (4 * 12 + 12) - (4 * 12 + 10) = 2;
+f(B4) = 440 * 2 ^ (2 / 12) = 493.88;
+
+A3 - A4 = (3 * 12 + 10) - (3 * 12 + 10) = -12;
+f(A3) = 440 * 2 ^ (-12 / 12) = 220;
+
+A5 - A4 = (5 * 12 + 10) - (3 * 12 + 10) = 12;
+f(A3) = 440 * 2 ^ (12 / 12) = 880;
+```
+
 ## Jingle Bells
 
 Melody is defined in the [jingle_bells.h](jingle_bells.h).
