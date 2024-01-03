@@ -23,11 +23,13 @@ SOFTWARE.
  */
 
 #include "note_scale.h"
+
 //
 // Melodies:
 //
 #include "jingle_bells.h"
 //#include "merry_christmas.h"
+//#include "elise.h"
 
 const int SPEAKER_PIN = 8;
 const int LED_PIN = 9; // 13 is digital only
