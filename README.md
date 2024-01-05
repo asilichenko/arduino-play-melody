@@ -10,8 +10,8 @@ Could be used to play melody and blink the Christmas lights.
 2. For each note in the melody do:
    1. Get the note name
    2. Get beat for the note
-   3. Calculate note playing duration = number of beats multiply by `TEMPO` (duration of one beat, defined for each melody)
-   4. Get note frequency by its name from the [notes_scale.h](notes_scale.h)
+   3. Calculate note playing duration = number of beats multiply by `Melody.tempo` (duration of one beat, defined for each melody)
+   4. Get note frequency by its name from the [music_structures.h](music_structures.h)
    5. Play the tone async, `playNote()`
    6. Blink by the LED, `blink()`:
       - Turn off (or fade down), 
@@ -23,22 +23,51 @@ Could be used to play melody and blink the Christmas lights.
 > [!NOTE]
 > If you want to fade out and fade in the light using the `analogWrite` function, do not use pin 13 (`LED_BUILTIN`) because it is digital-only.
 
-### External load connection
+### Memory optimization
 
-<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/284d2e7b-ebbc-4c12-b4ad-7fa12ce25c2d" width="300"/>
+To load multiple melodies with defined notes, their definitions are placed in PROGMEM structures. This approach stores data in Arduino flash memory, preventing excessive RAM usage.
 
-### To change the melody:
+To retrieve data from flash memory:
+
+```
+Note notes[melody.length];
+memcpy_P(&notes, melody.notes, melody.length * sizeof(Note));
+```
+
+### Define new melody
+
 1. create h-file for the melody
-2. include it instead of "jingle_bells.h"
-3. define in the melody file:
-   - `const int MELODY_LEN` - number of notes
-   - `const String MELODY_NOTES[MELODY_LEN] = {...};` - notes in the [Letter notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
-   - `const float MELODY_BEATS[MELODY_LEN] = {...};` - for each note number of duration beats to play the note
-4. don't forget to add new notes into the [notes_scale.h](notes_scale.h)
+2. include it into [arduino-play-melody.ino](arduino-play-melody.ino)
+3. Define notes in the [Letter notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation):
+```
+const Note NEW_MELODY_NOTES[] PROGMEM = {
+  {"C4", 1},
+};
+```
+where 
+- `C4` - name of the note is C in the 4th octave.
+- `1` - is float number of beats for the note.
+
+4. Define melody data:
+```
+const Melody NEW_MELODY PROGMEM = {
+  tempo: 300,
+  length: lengthOfNotes(NEW_MELODY_NOTES),
+  octaveShift: 0,
+  notes: NEW_MELODY_NOTES
+};
+```
+where:
+- `tempo` - duration of one beat in ms
+- `length` - number of notes in the notes array
+- `octaveShift` - octave shift of played notes:
+  - -1 - one octave down
+  -  0 - no shift
+  -  1 - one octave up
 
 ### Notes Scale
 
-Notes in the [notes_scale.h](notes_scale.h) are defined in [Letter notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation).
+Notes in the [music_structures.h](music_structures.h) are defined in [Letter notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation).
 
 Tones of the notes are defined by the [A440 standard](https://en.wikipedia.org/wiki/A440_(pitch_standard)):
 > A440 (also known as Stuttgart pitch) is the musical pitch corresponding to an audio frequency of 440 Hz, which serves as a tuning standard for the musical note of A above middle C, or A4 in scientific pitch notation.
@@ -85,6 +114,10 @@ f(A3) = 440 * 2 ^ (-12 / 12) = 220;
 A5 - A4 = (5 * 12 + 10) - (3 * 12 + 10) = 12;
 f(A3) = 440 * 2 ^ (12 / 12) = 880;
 ```
+
+## External load connection
+
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/284d2e7b-ebbc-4c12-b4ad-7fa12ce25c2d" width="300"/>
 
 ## Jingle Bells
 
@@ -185,8 +218,6 @@ Melody is defined in the [elise.h](elise.h).
 | E4 | C5 | B4 | A4 |
 | - | - | - | - |
 | 0.5 | 0.5 | 0.5 | 2 |
-
-###
 
 ## Silent Night
 
