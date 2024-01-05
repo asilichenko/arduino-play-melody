@@ -64,6 +64,15 @@ where:
   - -1 - one octave down
   -  0 - no shift
   -  1 - one octave up
+ 
+5. Add melody into the `MELODIES` array in the [arduino-play-melody.ino](arduino-play-melody.ino)
+
+```
+const Melody *MELODIES[] = {
+  ...,
+  &NEW_MELODY,
+};
+```
 
 ### Notes Scale
 
