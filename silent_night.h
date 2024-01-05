@@ -22,55 +22,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-const int TEMPO = 500; // 1 beat buration in ms
-const int MELODY_LEN = 48;
+const Note SILENT_NIGHT_NOTES[] PROGMEM = {
+  {"C4", 1.5}, {"D4", 0.5}, {"C4", 1}, {"A3", 3},
+  {"C4", 1.5}, {"D4", 0.5}, {"C4", 1}, {"A3", 3},
+  {"G4", 2}, {"G4", 1}, {"E4", 3},
+  {"F4", 2}, {"F4", 1}, {"C4", 3},
 
-// Scale: "F3", "G3", "A3", "A#3", "C4", "D4", "E4", "F4", "G4", "A4", "A#4"
+  {"D4", 2}, {"D4", 1}, {"F4", 1.5},
+  {"E4", 0.5}, {"D4", 1}, {"C4", 1.5},
+  {"D4", 0.5}, {"C4", 1}, {"A3", 3},
 
-const String MELODY_NOTES[MELODY_LEN] = {
-  "C4", "D4", "C4", "A3",
-  "C4", "D4", "C4", "A3",
-  "G4", "G4", "E4",
-  "F4", "F4", "C4",
-  
-  "D4", "D4", "F4",
-  "E4", "D4", "C4",
-  "D4", "C4", "A3",
+  {"D4", 2}, {"D4", 1}, {"F4", 1.5},
+  {"E4", 0.5}, {"D4", 1}, {"C4", 1.5},
+  {"D4", 0.5}, {"C4", 1}, {"A3", 3},
 
-  "D4", "D4", "F4",
-  "E4", "D4", "C4",
-  "D4", "C4", "A3",
-  
-  "G4", "G4", "A#4",
-  "G4", "E4", "F4",
-  "A4",
-  "F4", "C4", "A3", "C4",
-  "A#3", "G3", "F3",
-  "A3",
+  {"G4", 2}, {"G4", 1}, {"A#4", 1.5},
+  {"G4", 0.5}, {"E4", 1}, {"F4", 3},
+  {"A4", 3},
+  {"F4", 1}, {"C4", 1}, {"A3", 1}, {"C4", 1.5},
+  {"A#3", 0.5}, {"G3", 1}, {"F3", 3},
+  {"A3", 3},
 
-  " "
+  {" ", 3}
 };
 
-const float MELODY_BEATS[MELODY_LEN] = {
-  1.5, 0.5, 1, 3,
-  1.5, 0.5, 1, 3,
-  2, 1, 3,
-  2, 1, 3,
-  
-  2, 1, 1.5,
-  0.5, 1, 1.5,
-  0.5, 1, 3,
-  
-  2, 1, 1.5,
-  0.5, 1, 1.5,
-  0.5, 1, 3,
-  
-  2, 1, 1.5,
-  0.5, 1, 3,
-  3,
-  1, 1, 1, 1.5,
-  0.5, 1, 3,
-  3,
-
-  3
+const Melody SILENT_NIGHT PROGMEM = {
+  tempo: 500,
+  length: lengthOfNotes(SILENT_NIGHT_NOTES),
+  octaveShift: 0,
+  notes: SILENT_NIGHT_NOTES
 };

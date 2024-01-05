@@ -22,39 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-const int TEMPO = 700; // 1 beat buration in ms
-const int MELODY_LEN = 9+8+10+8+1;
+const Note FUR_ELISE_NOTES[] PROGMEM = {
+  {"E5", 0.5}, {"D#5", 0.5}, {"E5", 0.5}, {"D#5", 0.5},
+  {"E5", 0.5}, {"B4", 0.5}, {"D5", 0.5}, {"C5", 0.5}, {"A4", 1.5},
 
-const String MELODY_NOTES[MELODY_LEN] = {
-  "E5", "D#5", "E5", "D#5",
-  "E5", "B4", "D5", "C5", "A4",
-   
-  "C4", "E4", "A4", "B4",
-  "E4", "G#4", "B4", "C5",
-  
-  "E4",
-  "E5", "D#5", "E5", "D#5",
-  "E5", "B4", "D5", "C5", "A4",
+  {"C4", 0.5}, {"E4", 0.5}, {"A4", 0.5}, {"B4", 1.5},
+  {"E4", 0.5}, {"G#4", 0.5}, {"B4", 0.5}, {"C5", 1.5},
 
-  "C4", "E4", "A4", "B4",
-  "E4", "C5", "B4", "A4",
-  
-  " "
+  {"E4", 0.5},
+  {"E5", 0.5}, {"D#5", 0.5}, {"E5", 0.5}, {"D#5", 0.5},
+  {"E5", 0.5}, {"B4", 0.5}, {"D5", 0.5}, {"C5", 0.5}, {"A4", 1.5},
+
+  {"C4", 0.5}, {"E4", 0.5}, {"A4", 0.5}, {"B4", 1.5},
+  {"E4", 0.5}, {"C5", 0.5}, {"B4", 0.5}, {"A4", 2},
+
+  {" ", 1}
 };
 
-const float MELODY_BEATS[MELODY_LEN] = {
-  0.5, 0.5, 0.5, 0.5, 
-  0.5, 0.5, 0.5, 0.5, 1.5,
-  
-  0.5, 0.5, 0.5, 1.5,
-  0.5, 0.5, 0.5, 1.5,
-
-  0.5,
-  0.5, 0.5, 0.5, 0.5,
-  0.5, 0.5, 0.5, 0.5, 1.5,
-
-  0.5, 0.5, 0.5, 1.5,
-  0.5, 0.5, 0.5, 2,
-  
-  1
+const Melody FUR_ELISE PROGMEM = {
+  tempo: 700,
+  length: lengthOfNotes(FUR_ELISE_NOTES),
+  octaveShift: 1,
+  notes: FUR_ELISE_NOTES
 };

@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2023 Oleksii Sylichenko
+Copyright (c) 2023-2024 Oleksii Sylichenko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,51 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-const int TEMPO = 300; // 1 beat buration in ms
-const int MELODY_LEN = 90;
-
-const String MELODY_NOTES[MELODY_LEN] = {
-  "E5", "C#6", "B5", "A5", "E5",
-  "E5", "C#6", "B5", "A5", "F#5",
-  "F#5", "D6", "C#6", "B5", "G#5",
-  "E6", "F#6", "E6", "D6", "B5", "C#6",
-  "E5", "C#6", "B5", "A5", "E5",
-  "E5", "C#6", "B5", "A5", "F#5",
-  "F#5", "D6", "C#6", "B5", "E6", "E6", "E6",
-  "F#6", "E6", "D6", "B5", "A5",
-  "C#6", "C#6", "C#6",
-  "C#6", "C#6", "C#6",
-  "C#6", "E6", "A5", "B5", "C#6",
-  "D6", "D6", "D6", "D6",
-  "D6", "C#6", "C#6",
-  "C#6", "B5", "B5", "C#6", "B5", "E6",
-  "C#6", "C#6", "C#6",
-  "C#6", "C#6", "C#6",
-  "C#6", "E6", "A5", "B5", "C#6",
-  "D6", "D6", "D6",
-  "D6", "C#6", "C#6", "C#6",
-  "E6", "E6", "D6", "B5", "A5"
+const Note JINGLE_BELLS_NOTES[] PROGMEM = {
+  {"E5", 1}, {"C#6", 1}, {"B5", 1}, {"A5", 1}, {"E5", 4},
+  {"E5", 1}, {"C#6", 1}, {"B5", 1}, {"A5", 1}, {"F#5", 4},
+  {"F#5", 1}, {"D6", 1}, {"C#6", 1}, {"B5", 1}, {"G#5", 3},
+  {"E6", 1}, {"F#6", 1}, {"E6", 1}, {"D6", 1}, {"B5", 1}, {"C#6", 4},
+  {"E5", 1}, {"C#6", 1}, {"B5", 1}, {"A5", 1}, {"E5", 4},
+  {"E5", 1}, {"C#6", 1}, {"B5", 1}, {"A5", 1}, {"F#5", 4},
+  {"F#5", 1}, {"D6", 1}, {"C#6", 1}, {"B5", 1}, {"E6", 1}, {"E6", 1}, {"E6", 2},
+  {"F#6", 1}, {"E6", 1}, {"D6", 1}, {"B5", 1}, {"A5", 4},
+  {"C#6", 1}, {"C#6", 1}, {"C#6", 2},
+  {"C#6", 1}, {"C#6", 1}, {"C#6", 2},
+  {"C#6", 1}, {"E6", 1}, {"A5", 1.5}, {"B5", 0.5}, {"C#6", 4},
+  {"D6", 1}, {"D6", 1}, {"D6", 1.5}, {"D6", 0.5},
+  {"D6", 1}, {"C#6", 1}, {"C#6", 2},
+  {"C#6", 1}, {"B5", 1}, {"B5", 1}, {"C#6", 1}, {"B5", 2}, {"E6", 2},
+  {"C#6", 1}, {"C#6", 1}, {"C#6", 2},
+  {"C#6", 1}, {"C#6", 1}, {"C#6", 2},
+  {"C#6", 1}, {"E6", 1}, {"A5", 1.5}, {"B5", 0.5}, {"C#6", 4},
+  {"D6", 1}, {"D6", 1}, {"D6", 2},
+  {"D6", 1}, {"C#6", 1}, {"C#6", 1.5}, {"C#6", 0.5},
+  {"E6", 1}, {"E6", 1}, {"D6", 1}, {"B5", 1}, {"A5", 4}
 };
 
-const float MELODY_BEATS[MELODY_LEN] = {
-  1, 1, 1, 1, 4,
-  1, 1, 1, 1, 4,
-  1, 1, 1, 1, 3,
-  1, 1, 1, 1, 1, 4,
-  1, 1, 1, 1, 4,
-  1, 1, 1, 1, 4,
-  1, 1, 1, 1, 1, 1, 2,
-  1, 1, 1, 1, 4,
-  1, 1, 2,
-  1, 1, 2,
-  1, 1, 1.5, 0.5, 4,
-  1, 1, 1.5, 0.5,
-  1, 1, 2,
-  1, 1, 1, 1, 2, 2,
-  1, 1, 2,
-  1, 1, 2,
-  1, 1, 1.5, 0.5, 4,
-  1, 1, 2,
-  1, 1, 1.5, 0.5,
-  1, 1, 1, 1, 4
+const Melody JINGLE_BELLS PROGMEM = {
+  tempo: 300,
+  length: lengthOfNotes(JINGLE_BELLS_NOTES),
+  octaveShift: 0,
+  notes: JINGLE_BELLS_NOTES
 };

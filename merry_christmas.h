@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2023 Oleksii Sylichenko
+Copyright (c) 2023-2024 Oleksii Sylichenko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,25 +22,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-const int TEMPO = 400; // 1 beat buration in ms
-const int MELODY_LEN = 54;
+const Note MERRY_CHRISTMAS_NOTES[] PROGMEM = {
+  {"C5", 1}, {"F5", 1}, {"F5", 0.5}, {"G5", 0.5}, {"F5", 0.5}, {"E5", 0.5}, {"D5", 1}, {"D5", 1}, {"D5", 1},
 
-const String MELODY_NOTES[MELODY_LEN] = {
-  "C5", "F5", "F5", "G5", "F5", "E5", "D5", "D5", "D5",
-  "G5", "G5", "A5", "G5", "F5", "E5", "E5", "E5",
-  "A5", "A5", "B5", "A5", "G5", "F5", "D5", "C5", "C5", "D5", "G5", "E5", "F5",
-  "C5", "F5", "F5", "F5", "E5",
-  "E5", "F5", "E5", "D5", "C5",
-  "G5", "A5", "G5", "G5", "F5", "F5", "C6", "C5",
-  "C5", "C5", "D5", "G5", "E5", "F5"
+  {"G5", 1}, {"G5", 0.5}, {"A5", 0.5}, {"G5", 0.5}, {"F5", 0.5}, {"E5", 1}, {"E5", 1}, {"E5", 1},
+  {"A5", 1}, {"A5", 0.5}, {"B5", 0.5}, {"A5", 0.5}, {"G5", 0.5}, {"F5", 1}, {"D5", 1}, {"C5", 0.5}, {"C5", 0.5}, {"D5", 1}, {"G5", 1}, {"E5", 1}, {"F5", 2},
+
+  {"C5", 1}, {"F5", 1}, {"F5", 1}, {"F5", 1}, {"E5", 1},
+  {"E5", 1}, {"F5", 1}, {"E5", 1}, {"D5", 1}, {"C5", 1},
+
+  {"G5", 1}, {"A5", 1}, {"G5", 0.5}, {"G5", 0.5}, {"F5", 0.5}, {"F5", 0.5}, {"C6", 1}, {"C5", 1},
+  {"C5", 0.5}, {"C5", 0.5}, {"D5", 1}, {"G5", 1}, {"E5", 1}, {"F5", 1},
+  {" ", 1}
 };
 
-const float MELODY_BEATS[MELODY_LEN] = {
-  1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1,
-  1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1,
-  1, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 1, 1, 1, 2,
-  1, 1, 1, 1, 1,
-  1, 1, 1, 1, 1,
-  1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1,
-  0.5, 0.5, 1, 1, 1, 1
+const Melody MERRY_CHRISTMAS PROGMEM = {
+  tempo: 400,
+  length: lengthOfNotes(MERRY_CHRISTMAS_NOTES),
+  octaveShift: 0,
+  notes: MERRY_CHRISTMAS_NOTES
 };
