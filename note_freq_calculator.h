@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2023-2024 Oleksii Sylichenko
+Copyright (c) 2024 Oleksii Sylichenko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,42 +23,29 @@ SOFTWARE.
  */
 
 #pragma once
-#define lengthOfNotes(notes) (sizeof(notes) / sizeof(Note))
+#include <Arduino.h>
 
-struct Note {
-  /**
-   * Note name in letter notation, like "C4", "C#4"
-   */
-  char* name;
-  /**
-   * Duration in beats:
-   * 
-   * 0.5 - Eighth note, ♪
-   *   1 - Quarter note, ♩
-   * 1.5 - Quarter dotted note, ♩•
-   *   2 - Half note
-   *   3 - Half dotted note
-   *   4 - Whole note
-   */
-  float beat;
+/*
+ * Base note to calculate frequency for other notes.
+ * 
+ * A4 = 440 Hz
+ * 
+ * @see https://en.wikipedia.org/wiki/A440_(pitch_standard)
+ */
+static const int BASE_OCTAVE = 4;
+static const int BASE_TONE = 10;
+static const int BASE_FREQ = 440;
+
+static const int TONE_NAMES_LENGTH = 12;
+static const char* TONE_NAMES[TONE_NAMES_LENGTH] = {
+  "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"
 };
 
-struct Melody {
-  /**
-   * Duration of one beat in ms
-   */
-  int tempo;
-  /**
-   * Number of notes
-   */
-  int length;
-  /**
-   * Octave shift of played notes:
-   * 
-   * -1 - one octave down
-   *  0 - no shift
-   *  1 - one octave up
-   */
-  int octaveShift;
-  Note *notes;
-};
+/*
+ * Calculate note frequency for name.
+ * 
+ * f(n) = f(base) * 2 ^ (delta / 12);
+ * 
+ * @see https://pages.mtu.edu/~suits/notefreqs.html
+ */
+int freqOf(const char* note);

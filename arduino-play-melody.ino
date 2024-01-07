@@ -22,7 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
+#include <avr/sleep.h>
+
 #include "music_structures.h"
+#include "note_freq_calculator.h"
 
 //
 // Melodies:
@@ -38,15 +41,6 @@ const int LED_PIN = 9; // 13 is digital only
 const int PAUSE_BETWEEN_NOTES = 10; // in ms
 const int PAUSE_BETWEEN_MELODIES = 500; // in ms
 
-/*
- * Shift the tone of the octave
- * 
- *  1 - no shift
- * -2 - shift one octave down
- *  2 - shift one octave up
- */
-const int OCTAVE_SHIFT = 2;
-
 /**
  * LED blink state duration in ms, 80-120
  */
@@ -56,7 +50,8 @@ const int BLINK_DURATION = 100;
  */
 const float LED_LOW_BRIGHTNESS = HIGH * 0;
 
-boolean isMute = false;
+boolean isPlay = true;
+boolean isBlink = true;
 
 const Melody *MELODIES[] = {
   &JINGLE_BELLS,
@@ -78,24 +73,14 @@ int melodiesCounter = 0;
  * @param duration - play duration in ms
  */
 void playNote(const char* note, float octaveShift, int duration) {
-  for (int i = 0; i < NOTE_SCALE_LEN; i++) {
-    if (strcmp(NOTE_NAMES[i], note) == 0) {
-      const int noteTone = NOTE_TONES[i] * octaveShift;
-      tone(SPEAKER_PIN, noteTone, duration);
-      break;
-    }
-  }
+  const int freq = freqOf(note) * octaveShift;
+  tone(SPEAKER_PIN, freq, duration);
 }
 
 void blink() {
   analogWrite(LED_PIN, LED_LOW_BRIGHTNESS);
   delay(BLINK_DURATION);
   digitalWrite(LED_PIN, HIGH);
-}
-
-void setup() {
-  pinMode(SPEAKER_PIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
 }
 
 Melody nextMelody() {
@@ -108,6 +93,11 @@ Melody nextMelody() {
   return retval;
 }
 
+void setup() {
+  pinMode(SPEAKER_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
+}
+
 void loop() {
   digitalWrite(LED_PIN, HIGH);
 
@@ -117,18 +107,21 @@ void loop() {
   memcpy_P(&notes, melody.notes, melody.length * sizeof(Note));
     
   const float octaveShift = pow(2, melody.octaveShift);
-    
+
   for (int j = 0; j < melody.length; j++) {
-    const Note note = notes[j];
+    const Note &note = notes[j];
     const char* noteName = note.name;
-    const int noteDuration = note.beat * melody.tempo;
+    int noteDuration = note.beat * melody.tempo;
 
     if (noteName == " ") { // rest
       delay(noteDuration);
     } else {
-      if (!isMute) playNote(noteName, octaveShift, noteDuration);
-      blink();
-      delay(noteDuration - BLINK_DURATION); // wait for the note to finish playing
+      if (isPlay) playNote(noteName, octaveShift, noteDuration);
+      if (isBlink) {
+        blink();
+        noteDuration -= BLINK_DURATION;
+      }
+      delay(noteDuration); // wait for the note to finish playing
     }
     delay(PAUSE_BETWEEN_NOTES);
   }
