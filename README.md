@@ -90,6 +90,8 @@ Frequencies for equal-tempered scale, A4 = 440 Hz:
 
 The frequency of any note can be calculated based on the reference note.
 
+Algorythm is implemented in the [note_freq_calculator.cpp](note_freq_calculator.cpp).
+
 For example, according to standard A4 = 440:
 
 * base note, `base` = A4
