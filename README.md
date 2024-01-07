@@ -302,6 +302,12 @@ Notes: [silent_night.h](silent_night.h)
 
 ## Links
 * My post about how I used this sketch for my Christmas lights: [Restoring Vintage Christmas Lights](https://www.linkedin.com/pulse/restoring-my-parents-vintage-christmas-lights-oleksii-sylichenko-cppif)
+* [Jingle Bells Melody Piano](https://www.youtube.com/watch?v=i0uPkqiJtPo)
+* [Jingle Bells Christmas Lights](https://www.youtube.com/shorts/DfsxTG0Lw90)
+* [We Wish You a Merry Christmas on Christmas Lights](https://www.youtube.com/shorts/zpfFC2_fZ3E)
+* [Letter notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
+* [A440 standard](https://en.wikipedia.org/wiki/A440_(pitch_standard))
+* [Note frequencies](https://pages.mtu.edu/~suits/notefreqs.html)
 
 ## Author
 - [@asilichenko](https://github.com/asilichenko)
