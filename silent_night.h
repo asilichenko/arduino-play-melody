@@ -49,6 +49,6 @@ const Note SILENT_NIGHT_NOTES[] PROGMEM = {
 const Melody SILENT_NIGHT PROGMEM = {
   tempo: 500,
   length: lengthOfNotes(SILENT_NIGHT_NOTES),
-  octaveShift: 0,
+  octaveShift: 1,
   notes: SILENT_NIGHT_NOTES
 };
