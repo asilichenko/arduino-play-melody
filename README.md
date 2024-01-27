@@ -112,6 +112,8 @@ delta = n - base = (O * 12 + n) - (4 * 12 + 10);
 * `12` - number of tones in the octave;
 * `10` - base tone number in its octave;
 
+<img src="https://github.com/asilichenko/arduino-play-melody/assets/1503214/fed93643-bc54-4714-8bd8-0af8c4268817" width = "700"/>
+
 ```
 C4 - A4 = (4 * 12 + 1) - (4 * 12 + 10) = -9;
 f(C4) = 440 * 2 ^ (-9 / 12) = 440 * 2 ^ -0.75 = 440 * 0.5946 = 461.63;
